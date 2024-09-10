@@ -15,6 +15,11 @@
       color: white;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     #particles-js {
       height: 100vh;
       position: relative;
@@ -29,6 +34,8 @@
       opacity: 0;
       animation: fadeIn 2s forwards;
       z-index: 1;
+
+      animation: fadeInUp 2s ease-in-out forwards;
     }
 
     .navbar {
@@ -164,6 +171,7 @@
       border-color: #3b2164; /* Purple border on focus */
     }
 
+
     .contact-form button {
       width: 100%;
       padding: 12px 0;
@@ -188,6 +196,47 @@
       color: #00aaff;
       text-decoration: none;
     }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateY(20px); /* Translate from above */
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .portfolio-item {
+      /* ... (rest of portfolio-item styles) ... */
+      animation: fadeIn 0.5s ease-in-out; /* New animation for portfolio items */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .contact-form button {
+      /* ... (rest of button styles) ... */
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
 
   </style>
 </head>
@@ -196,12 +245,7 @@
   <!-- Particle container -->
   <div id="particles-js"></div>
   
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <a href="#">Option 1</a>
-    <a href="#">Option 2</a>
-    <a href="#">Option 3</a>
-  </div>
+  
 
   <!-- Main Content -->
   <div class="content-container">
@@ -210,13 +254,13 @@
   </div>
 
   <!-- About Me Section -->
-  <div class="section about-me">
+  <div id="about" class="section about-me">
     <h2>About Me</h2>
     <p>Hello! I'm Kritu Patel, a web developer with a passion for creating beautiful and functional websites.</p>
   </div>
 
   <!-- Portfolio Section -->
-  <div class="section portfolio">
+  <div id="projects" class="section portfolio">
     <h2>Portfolio</h2>
 
     <!-- Categories -->
@@ -260,7 +304,7 @@
   </div>
   
   <!-- Contact Me Section -->
-  <div class="section contact-me">
+  <div id="contact" class="section contact-me">
     <h2>Contact</h2>
     <form class="contact-form">
       <label for="name">Name</label>
@@ -278,6 +322,15 @@
       <button type="submit">Send</button>
     </form>
   </div>
+
+
+  <!-- Navigation Bar -->
+<div class="navbar">
+  <a href="#about" class="nav-link">About </a> <!-- Scrolls to "About Me" -->
+  <a href="#projects" class="nav-link">Projects</a> <!-- Scrolls to "Projects" (Portfolio) -->
+  <a href="#contact" class="nav-link">Contact</a> <!-- Scrolls to "Contact Me" -->
+</div>
+
 
   <!-- Initialize particles.js -->
   <script>
