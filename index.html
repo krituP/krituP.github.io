@@ -12,10 +12,12 @@
       margin: 0;
       overflow-x: hidden;
       font-family: Arial, sans-serif;
+      color: white;
     }
 
     #particles-js {
       height: 100vh;
+      position: relative;
     }
 
     .content-container {
@@ -24,7 +26,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      color: white;
       opacity: 0;
       animation: fadeIn 2s forwards;
       z-index: 1;
@@ -50,28 +51,232 @@
         opacity: 1;
       }
     }
+
+    .section {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .about-me {
+      background-color: #2b2b2b;
+    }
+
+    .portfolio {
+      background-color: #000000; /* Black background for portfolio */
+      padding: 50px 20px;
+      color: white;
+    }
+
+    .portfolio h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .portfolio-categories {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .category-btn {
+      background-color: #1a1a1a; /* Dark grey background for buttons */
+      color: white;
+      border: 1px solid #3c3b3d;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .category-btn.active {
+      background-color: #3b2164; /* Dark purple for active category */
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      border-top: 1px solid #3c3b3d; /* Top border for the grid */
+      padding-top: 20px;
+    }
+
+    .portfolio-item {
+      background-color: #1a1a1a; /* Dark grey for portfolio items */
+      border: 1px solid #3c3b3d; /* Light border to create a line effect */
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #3c3b3d; /* Line below each image */
+    }
+
+    .contact-me {
+      text-align: center;
+      background-color: #000000; /* Use black background */
+      padding: 50px 20px;
+      color: white; /* White text */
+    }
+
+    .contact-me h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #c4c4c4; /* Light grey text color */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #3c3b3d; /* Light border to match the theme */
+      border-radius: 5px;
+      background-color: #1a1a1a; /* Dark background for inputs */
+      color: white;
+      font-size: 1rem;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #3b2164; /* Purple border on focus */
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 12px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #d9534f; /* Red background for the button */
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #c9302c; /* Darker red on hover */
+    }
+
+    .email-me {
+      background-color: #141414;
+    }
+
+    .email-me a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body>
 
-   
- 
-
   <!-- Particle container -->
   <div id="particles-js"></div>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-      <a href="#">Option 1</a>
-      <a href="#">Option 2</a>
-      <a href="#">Option 3</a>
-    </div>
-  </div>
   
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="#">Option 1</a>
+    <a href="#">Option 2</a>
+    <a href="#">Option 3</a>
+  </div>
 
-  <!-- Your website content goes here -->
+  <!-- Main Content -->
   <div class="content-container">
     <h1>KRITU PATEL</h1>
     <p>Under construction</p>
+  </div>
+
+  <!-- About Me Section -->
+  <div class="section about-me">
+    <h2>About Me</h2>
+    <p>Hello! I'm Kritu Patel, a web developer with a passion for creating beautiful and functional websites.</p>
+  </div>
+
+  <!-- Portfolio Section -->
+  <div class="section portfolio">
+    <h2>Portfolio</h2>
+
+    <!-- Categories -->
+    <div class="portfolio-categories">
+      <button class="category-btn active">Featured</button>
+      <button class="category-btn">MERN or Web Apps</button>
+      <button class="category-btn">Mobile App</button>
+      <button class="category-btn">HTML, CSS, JS</button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="path_to_image1.jpg" alt="Project 1">
+      </div>
+      <div class="portfolio-item">
+        <img src="path_to_image2.jpg" alt="Project 2">
+      </div>
+      <div class="portfolio-item">
+        <img src="path_to_image3.jpg" alt="Project 3">
+      </div>
+      <div class="portfolio-item">
+        <img src="path_to_image4.jpg" alt="Project 4">
+      </div>
+      <div class="portfolio-item">
+        <img src="path_to_image5.jpg" alt="Project 5">
+      </div>
+      <div class="portfolio-item">
+        <img src="path_to_image6.jpg" alt="Project 6">
+      </div>
+      <div class="portfolio-item">
+        <img src="path_to_image7.jpg" alt="Project 7">
+      </div>
+      <div class="portfolio-item">
+        <img src="path_to_image8.jpg" alt="Project 8">
+      </div>
+      <div class="portfolio-item">
+        <img src="path_to_image9.jpg" alt="Project 9">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Contact Me Section -->
+  <div class="section contact-me">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
   </div>
 
   <!-- Initialize particles.js -->
@@ -96,7 +301,7 @@
           },
           polygon: {
             nb_sides: 5
-          }
+          },
         },
         opacity: {
           value: 0.5,
@@ -168,14 +373,14 @@
             speed: 3
           },
           repulse: {
-            distance: 100,
+            distance: 200,
             duration: 0.4
           },
           push: {
-            particles_nb: 3
+            particles_nb: 4
           },
           remove: {
-            particles_nb: 3
+            particles_nb: 2
           }
         }
       },
