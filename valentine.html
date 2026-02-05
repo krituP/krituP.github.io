@@ -410,17 +410,26 @@
                 escapeCounter.textContent = `Escape attempts: ${escapeAttempts} (just give up already 😭)`;
             }
 
-            // Get button dimensions
-            const btnRect = noBtn.getBoundingClientRect();
-            const btnWidth = btnRect.width || 80;
-            const btnHeight = btnRect.height || 50;
+            // Calculate current scale
+            let currentScale = 1;
+            if (escapeAttempts > 10) {
+                currentScale = Math.max(0.5 - (escapeAttempts - 10) * 0.05, 0.2);
+            }
+
+            // Get original button dimensions (before any scaling)
+            const originalWidth = 80;
+            const originalHeight = 50;
+            
+            // Calculate actual button size after scaling
+            const btnWidth = originalWidth * currentScale;
+            const btnHeight = originalHeight * currentScale;
             
             // Calculate safe bounds with generous padding
-            const padding = 20;
+            const padding = 30;
             const minX = padding;
             const minY = padding;
-            const maxX = window.innerWidth - btnWidth - padding;
-            const maxY = window.innerHeight - btnHeight - padding;
+            const maxX = window.innerWidth - originalWidth - padding;
+            const maxY = window.innerHeight - originalHeight - padding;
             
             // Generate random position within safe bounds
             let newX = minX + Math.random() * (maxX - minX);
@@ -445,7 +454,8 @@
 
             // After 10 attempts, the No button gets tiny
             if (escapeAttempts > 10) {
-                noBtn.style.transform = `scale(${Math.max(0.5 - (escapeAttempts - 10) * 0.05, 0.2)})`;
+                noBtn.style.transform = `scale(${currentScale})`;
+                noBtn.style.transformOrigin = 'top left';
                 noBtn.style.opacity = Math.max(1 - (escapeAttempts - 10) * 0.1, 0.3);
             }
         }
